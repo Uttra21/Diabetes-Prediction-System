@@ -46,39 +46,6 @@ A Machine Learning-powered web application that predicts diabetes risk based on 
 
 ---
 
-## Project Structure
-
-```text
-Diabetes-Prediction-System/
-│
-├── app/
-│   ├── static/
-│   ├── templates/
-│   └── app.py
-│
-├── data/
-│   └── diabetes.csv
-│
-├── database/
-│   └── diabetes.db
-│
-├── models/
-│   ├── diabetes_model.pkl
-│   └── train_model.py
-│
-├── notebooks/
-│   └── diabetes_prediction_system.ipynb
-│
-├── Screenshots/
-│   ├── prediction.png
-│   └── dashboard.png
-│
-├── requirements.txt
-└── README.md
-```
-
----
-
 ## Screenshots
 
 ### Diabetes Prediction Interface
