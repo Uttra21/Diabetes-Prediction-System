@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body{
+            font-family: Arial;
+            background:#f4f4f4;
+            padding:30px;
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .container{
+            display:flex;
+            gap:20px;
+            justify-content:center;
+            flex-wrap:wrap;
+            margin-bottom:40px;
+        }
+
+        .card{
+            width:220px;
+            padding:20px;
+            background:white;
+            border-radius:10px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+            text-align:center;
+        }
+
+        .number{
+            font-size:32px;
+            font-weight:bold;
+            color:#007bff;
+        }
+
+        .chart-box{
+            width:400px;
+            margin:auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Diabetes Analytics Dashboard</h1>
+
+<div class="container">
+
+    <div class="card">
+        <h3>Total Predictions</h3>
+        <div class="number">{{ total }}</div>
+    </div>
+
+    <div class="card">
+        <h3>Diabetic Cases</h3>
+        <div class="number">{{ diabetic }}</div>
+    </div>
+
+    <div class="card">
+        <h3>Average Risk</h3>
+        <div class="number">{{ avg_risk }}%</div>
+    </div>
+
+    <div class="card">
+        <h3>Highest Risk</h3>
+        <div class="number">{{ max_risk }}%</div>
+    </div>
+
+</div>
+
+<h2 style="text-align:center;">
+    Prediction Distribution
+</h2>
+
+<div class="chart-box">
+    <canvas id="pieChart"></canvas>
+</div>
+
+<script>
+
+const ctx = document.getElementById('pieChart');
+
+new Chart(ctx, {
+    type: 'pie',
+
+    data: {
+        labels: ['Diabetic', 'Non-Diabetic'],
+
+        datasets: [{
+            data: [
+                {{ diabetic }},
+                {{ non_diabetic }}
+            ],
+
+            backgroundColor: [
+                '#ff6384',
+                '#36a2eb'
+            ]
+        }]
+    },
+
+    options: {
+        responsive: true
+    }
+});
+
+</script>
+
+</body>
+</html>
