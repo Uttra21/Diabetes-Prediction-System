@@ -50,11 +50,11 @@ A Machine Learning-powered web application that predicts diabetes risk based on 
 
 ### Diabetes Prediction Interface
 
-![Prediction](Screenshots/prediction.png)
+![Prediction](Screenshots/Prediction.png)
 
 ### Analytics Dashboard
 
-![Dashboard](Screenshots/dashboard.png)
+![Dashboard](Screenshots/Dashboard.png)
 
 ---
 
